@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "edgestrapitwos",
+  "info": {
+    "singularName": "edgestrapitwo",
+    "pluralName": "edgestrapitwos",
+    "displayName": "edgestrapitwo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "testttttt": {
+      "type": "string"
+    }
+  }
+}

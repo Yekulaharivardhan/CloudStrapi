@@ -614,6 +614,35 @@ export interface ApiEdgestrapiEdgestrapi extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEdgestrapitwoEdgestrapitwo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'edgestrapitwos';
+  info: {
+    displayName: 'edgestrapitwo';
+    pluralName: 'edgestrapitwos';
+    singularName: 'edgestrapitwo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::edgestrapitwo.edgestrapitwo'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    testttttt: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1160,6 +1189,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::edgestrapi.edgestrapi': ApiEdgestrapiEdgestrapi;
+      'api::edgestrapitwo.edgestrapitwo': ApiEdgestrapitwoEdgestrapitwo;
       'api::global.global': ApiGlobalGlobal;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
