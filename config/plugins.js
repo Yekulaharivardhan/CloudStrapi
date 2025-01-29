@@ -1,39 +1,41 @@
-module.exports = () => ({
+// ./config/plugins.ts`
+export default () => ({
     'preview-button': {
-        config: {
-          enabled: true,
-          contentTypes: [
-            {
-              uid: 'api::page.page',
-              draft: {
-                url: 'http://localhost:3000/api/preview',
-                query: {
-                  type: 'page',
-                  slug: '{slug}',
-                },
-                openTarget: 'StrapiPreviewPage',
-              },
-              published: {
-                url: 'http://localhost:3000/{slug}',
-                openTarget: 'StrapiPage',
+      config: {
+        contentTypes: [
+          {
+            uid: 'api::home.home',
+            published: {
+              url: 'http://localhost:3000',
+            },
+          },
+          {
+            uid: 'api::page.page',
+            draft: {
+              url: 'http://localhost:3000/api/preview',
+              query: {
+                type: 'page',
+                slug: '{slug}',
               },
             },
-            {
-              uid: 'api::post.post',
-              draft: {
-                url: 'http://localhost:3000/api/preview',
-                query: {
-                  type: 'post',
-                  slug: '{slug}',
-                },
-                openTarget: 'StrapiPreviewPost',
-              },
-              published: {
-                url: 'http://localhost:3000/blog/{slug}',
-                openTarget: 'StrapiPost',
+            published: {
+              url: 'http://localhost:3000/{slug}',
+            },
+          },
+          {
+            uid: 'api::post.post',
+            draft: {
+              url: 'http://localhost:3000/api/preview',
+              query: {
+                type: 'post',
+                slug: '{slug}',
               },
             },
-          ],
-        },
+            published: {
+              url: 'http://localhost:3000/blog/{slug}',
+            },
+          },
+        ],
       },
-});
+    },
+  });
