@@ -463,6 +463,10 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 80;
       }>;
+    edgestrapitwo: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::edgestrapitwo.edgestrapitwo'
+    >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -618,6 +622,7 @@ export interface ApiEdgestrapitwoEdgestrapitwo
   extends Struct.CollectionTypeSchema {
   collectionName: 'edgestrapitwos';
   info: {
+    description: '';
     displayName: 'edgestrapitwo';
     pluralName: 'edgestrapitwos';
     singularName: 'edgestrapitwo';
@@ -626,17 +631,20 @@ export interface ApiEdgestrapitwoEdgestrapitwo
     draftAndPublish: true;
   };
   attributes: {
+    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    desc: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::edgestrapitwo.edgestrapitwo'
     > &
       Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    testttttt: Schema.Attribute.String;
+    slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

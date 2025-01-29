@@ -4,15 +4,28 @@
   "info": {
     "singularName": "edgestrapitwo",
     "pluralName": "edgestrapitwos",
-    "displayName": "edgestrapitwo"
+    "displayName": "edgestrapitwo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "testttttt": {
+    "Name": {
       "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "edgestrapitwo"
+    },
+    "desc": {
+      "type": "text"
     }
   }
 }
