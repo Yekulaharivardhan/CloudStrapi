@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "edgestrapis",
+  "info": {
+    "singularName": "edgestrapi",
+    "pluralName": "edgestrapis",
+    "displayName": "edgestrapi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Default": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
